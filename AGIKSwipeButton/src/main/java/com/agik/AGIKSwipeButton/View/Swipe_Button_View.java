@@ -40,8 +40,8 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
     protected float swipeTextSize = spToPx(16, getContext());
     protected String swipeText;
     protected boolean animateSwipeText;
-    protected int ThumbImageId,swipe_thumb_bg_color,swipe_bg_color,swipeTextColor;
-    
+    protected int ThumbImageId, swipe_thumb_bg_color, swipe_bg_color, swipeTextColor;
+
     public Swipe_Button_View(Context context) {
         super(context);
         set_default(null, 0);
@@ -79,7 +79,7 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-    
+
     void set_default(AttributeSet attrs, int defStyle) {
         inflate(getContext(), R.layout.sb_swipe_view, this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -137,11 +137,12 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
         }
     }
 
-    public void setreverse_180(){
+    public void setreverse_180() {
         swipe_button_controller.setRotation(180);
         set_text_position();
     }
-    public void setreverse_0(){
+
+    public void setreverse_0() {
         swipe_button_controller.setRotation(0);
         set_text_position();
     }
@@ -165,12 +166,20 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
         swipeTextView.setText(text);
     }
 
-    public void setTextSize(int size) { swipeTextView.setTextSize(size); }
+    public void setTextSize(int size) {
+        swipeTextView.setTextSize(size);
+    }
 
-    public TextView getTextView() { return swipeTextView; }
+    public TextView getTextView() {
+        return swipeTextView;
+    }
 
     public void setThumbImage(Drawable image) {
         swipeLayers.setDrawableByLayerId(R.id.thumb_image, image);
+    }
+
+    public void setTextAppearance(int textAppearance) {
+        swipeTextView.setTextAppearance(getContext(), textAppearance);
     }
 
     public void setThumbBackgroundColor(int color) {
@@ -188,13 +197,14 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
     public void setOnSwipeCompleteListener_forward_reverse(OnSwipeCompleteListener listener_forward_reverse) {
         swipe_button_controller.setOnSwipeCompleteListener_forward_reverse(listener_forward_reverse, this);
     }
+
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
         for (int i = 0; i < getChildCount(); i++) {
             getChildAt(i).setEnabled(enabled);
         }
-        swipeLayers.setDrawableByLayerId(R.id.thumb_image,ContextCompat.getDrawable(getContext(), ThumbImageId));
+        swipeLayers.setDrawableByLayerId(R.id.thumb_image, ContextCompat.getDrawable(getContext(), ThumbImageId));
         setDrawableColor(thumb_bg_drawable, swipe_thumb_bg_color);
         setDrawableColor(swipe_bg_drawable, swipe_bg_color);
     }
