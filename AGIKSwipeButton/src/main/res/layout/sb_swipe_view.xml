@@ -13,8 +13,6 @@
         android:layout_centerVertical="true"
         android:clickable="false"
         android:max="100"
-        android:maxHeight="35dp"
-        android:minHeight="35dp"
         android:progressDrawable="@android:color/transparent"
         android:splitTrack="false"
         android:thumb="@drawable/sb_thumb_bg"
