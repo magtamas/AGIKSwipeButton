@@ -147,6 +147,10 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
         set_text_position();
     }
 
+    public void setThumbVisibility(boolean visible, boolean restart) {
+        getSlider().getThumb().setVisible(visible, restart);
+    }
+
     private void set_text_position() {
         LayoutParams params = ((LayoutParams) swipeTextView.getLayoutParams());
         params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
