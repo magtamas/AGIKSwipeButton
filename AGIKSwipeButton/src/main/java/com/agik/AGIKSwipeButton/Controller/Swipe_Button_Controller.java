@@ -77,7 +77,9 @@ public class Swipe_Button_Controller extends AppCompatSeekBar {
                 }
             }
             getParent().requestDisallowInterceptTouchEvent(false);
-            setProgress(0);
+            if(getProgress() != 100){
+                setProgress(0);
+            }
         }
         else
             super.onTouchEvent(event);
