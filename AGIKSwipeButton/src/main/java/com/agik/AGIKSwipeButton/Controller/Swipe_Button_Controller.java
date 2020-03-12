@@ -50,7 +50,7 @@ public class Swipe_Button_Controller extends AppCompatSeekBar {
                 return false;
             }
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (getProgress() > 85) {
+            if (getProgress() > swipe_button_view.getMinProgressForAction()) {
                 if(swipe_button_view.swipe_both_direction){
                     if (listener_forward_reverse != null) {
                         if (!swipe_button_view.swipe_reverse) {

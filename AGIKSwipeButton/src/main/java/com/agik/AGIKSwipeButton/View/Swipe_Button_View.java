@@ -41,6 +41,7 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
     protected String swipeText;
     protected boolean animateSwipeText;
     protected int ThumbImageId, swipe_thumb_bg_color, swipe_bg_color, swipeTextColor;
+    private int minProgressForAction;
 
     public Swipe_Button_View(Context context) {
         super(context);
@@ -104,6 +105,10 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
         }
     }
 
+    public int getMinProgressForAction() {
+        return minProgressForAction;
+    }
+
     private void getAttributes(TypedArray attributes) {
 
         swipe_reverse = attributes.getBoolean(R.styleable.SwipeButtonView_sb_swipe_reverse, false);
@@ -128,6 +133,15 @@ public class Swipe_Button_View extends RelativeLayout implements SeekBar.OnSeekB
         setSwipeBackgroundColor(swipe_bg_color);
         strokeColor = attributes.getColor(R.styleable.SwipeButtonView_sb_stroke_bg_color, ContextCompat.
                 getColor(getContext(), R.color.sb_stroke_color_default));
+
+        minProgressForAction = attributes.getInt(R.styleable.SwipeButtonView_min_progress_for_action,100);
+
+        if(minProgressForAction < 0) {
+            minProgressForAction = 0;
+        } else if(minProgressForAction > 100) {
+            minProgressForAction = 100;
+        }
+
         if (attributes.hasValue(R.styleable.SwipeButtonView_sb_stroke_bg_color)) {
             setDrawableStroke(swipe_bg_drawable, strokeColor);
         }

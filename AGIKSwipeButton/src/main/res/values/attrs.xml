@@ -12,5 +12,6 @@
         <attr name="sb_swipe_text_size" format="dimension" />
         <attr name="sb_swipe_reverse" format="boolean" />
         <attr name="sb_swipe_both_direction" format="boolean" />
+        <attr name="min_progress_for_action" format="integer"/>
     </declare-styleable>
 </resources>
