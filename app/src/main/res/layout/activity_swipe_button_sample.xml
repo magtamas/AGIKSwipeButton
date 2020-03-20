@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Swipe_Button_Sample">
+
     <com.agik.AGIKSwipeButton.View.Swipe_Button_View
         android:id="@+id/stop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="15dp"
-        app:sb_swipe_text="Stop"
+        app:sb_swipe_text="Start"
         app:sb_swipe_animate_text="true"
-        app:sb_swipe_reverse="true"
-        android:layout_alignParentTop="true"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         />
+
     <com.agik.AGIKSwipeButton.View.Swipe_Button_View
         android:id="@+id/start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_below="@+id/stop"
         android:layout_marginTop="15dp"
         app:sb_swipe_text="Start"
