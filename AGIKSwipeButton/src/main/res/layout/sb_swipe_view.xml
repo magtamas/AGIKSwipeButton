@@ -31,7 +31,7 @@
         android:progressDrawable="@android:color/transparent"
         android:splitTrack="false"
         android:thumb="@drawable/sb_thumb_bg"
-        android:thumbOffset="10dp"
+        android:thumbOffset="20dp"
         tools:ignore="UnusedAttribute" />
 
 

@@ -10,12 +10,15 @@
         android:id="@+id/stop"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="15dp"
-        app:sb_swipe_text="Start"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
         app:sb_swipe_animate_text="true"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        />
+        app:min_progress_for_action="75"
+        app:sb_swipe_bg_color="@color/colorBgGray"
+        app:sb_swipe_both_direction="false"
+        app:sb_swipe_reverse="false"
+        app:sb_swipe_text="scroll to close"
+        app:sb_swipe_text_color="#352962" />
 
     <com.agik.AGIKSwipeButton.View.Swipe_Button_View
         android:id="@+id/start"
